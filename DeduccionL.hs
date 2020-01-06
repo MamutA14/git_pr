@@ -152,3 +152,7 @@ esDeduccionEnL lpremisas lpasos phi =
     showCheckConclusion lpremisas lpasos phi
   where
     fSize = maxL [length (showPLI f) | (_,(f,_)) <- lpasos ]
+
+
+estoEsprueba::Int->Int
+estoEsprueba x = x
