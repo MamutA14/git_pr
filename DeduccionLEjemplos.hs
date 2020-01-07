@@ -22,8 +22,9 @@ ejemplo1 = -- {Var 1, Var 1 -> Bot} |- Bot
     phi = Bot
       in esDeduccionEnL gamma lpasos phi
 
-ejemplo2 :: IO ()
-ejemplo2 =
+ejemplo3:: IO()
+ejemplo3 =
+    =
   let
     v1 = Var 1
     v2 = Var 2
@@ -40,3 +41,4 @@ ejemplo2 =
         ]
     phi = v1⇒v3
   in esDeduccionEnL gamma lpasos phi
+
