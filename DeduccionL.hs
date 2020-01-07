@@ -124,21 +124,6 @@ showLpasos fSize lprem prevLp lpasos = case lpasos of
     showLpasos fSize lprem (prevLp++[p]) lps
 
 -- Muestra el resultado de la prueba realizada.
-showCheckConclusion :: [PLI] -> [NumPaso] -> PLI -> IO ()
-showCheckConclusion lpremisas lpasos phi =
-  do
-    putStrLn mensaje
-    putStrLn ""
-    where
-      mensaje
-        | not pruebaOK = "\t*** Hay pasos incorrectos. ***"
-        | phi /= fN = "\t*** La ultima formula no es el objetivo: ***"++ (showPLI phi) ++" /= "++ (showPLI fN)
-        | otherwise =  "\tCorrecto. Mediante el sistema L: "++ lpremS ++ " |- " ++ showPLI fN
-      pruebaOK = checkPrueba lpremisas lpasos
-      (_,(fN,_)) = ultimoPaso lpasos
-      lpremS = if lpremisas /= []
-        then "{" ++ showLphi lpremisas ++"}"
-        else ""
         
 -- Función que nos regresa el elemento más grande.
 maxL :: Ord a => [a] -> a
